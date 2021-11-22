@@ -1,0 +1,6 @@
+// Testing pre-defined functions
+
+var hello <- "Hello, World!";
+Print(hello);
+Print("1234023");
+die(100);

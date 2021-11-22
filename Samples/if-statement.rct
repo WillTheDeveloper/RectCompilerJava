@@ -1,0 +1,7 @@
+var test string;
+if (true) {
+    test <- 100;
+} else {
+    test <- 500;
+}
+
