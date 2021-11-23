@@ -9,7 +9,7 @@ public class Main {
 
         if (args.length == 2) {
             if (args[1] == "--help" || args[1] == "-h") {
-                elp();
+                help();
                 return;
             }
 
