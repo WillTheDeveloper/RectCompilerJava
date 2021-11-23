@@ -1,35 +1,36 @@
 import java.util.ArrayList;
+import java.lang.*;
 
 public class Lexer {
-    String code;
+    char[] code;
     int index;
 
-    public Lexer(String text) {
+    public Lexer(char[] text) {
         code = text;
         index = 0;
     }
 
     public ArrayList<Token> Analyse() {
         ArrayList<Token> token = new ArrayList<Token>();
-        int length = code.length();
 
-        while (index < code) {
+        while (index < code.length) {
 
-            if(isDigit(code[index]) {
-                String buffer = new String(code[index]);
+            if(Character.isDigit(code[index])) {
+                String buffer = Character.toString(code[index]);
                 index++;
-                while(index < length && isDigit(code[index])) {
+                while(index < code.length && Character.isDigit(code[index])) {
                     buffer += code[index];
                     index++;
                 }
                 token.add(new Token("Integer", buffer));
             }
         }
+        return token;
     }
 
-    public String Peek() {
-        if (index+1 >= code.length()) {
-            return "";
+    public char Peek() {
+        if (index+1 >= code.length) {
+            return '\0';
         }
         return code[index+1];
     }
@@ -44,7 +45,7 @@ public class Lexer {
 
     public boolean Advance() {
         index++;
-        if (index >= code.length()) {
+        if (index >= code.length) {
             return false;
         }
         return true;
