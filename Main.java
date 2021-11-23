@@ -4,13 +4,13 @@ public class Main {
     public static void main(String[] args) {
         if (args.length < 2) {
             System.out.println("Usage: rcj <file> [flags]");
-            return
+            return;
         }
 
         if (args.length == 2) {
             if (args[1] == "--help" || args[1] == "-h") {
                 elp();
-                return
+                return;
             }
 
             openAndRun(args[1]);
