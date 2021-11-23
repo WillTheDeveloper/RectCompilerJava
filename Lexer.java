@@ -24,30 +24,36 @@ public class Lexer {
                 }
                 token.add(new Token("Integer", buffer));
             }
+
+            else if(Character.isAlphabetic(code[index])) {
+                String buffer = Character.toString(code[index]);
+                index++;
+                while(index < code.length && Character.isLetterOrDigit(code[index])) {
+                    buffer += code[index];
+                    index++;
+                }
+                token.add(new Token("Identifier", buffer));
+            }
+
+            else if(code[index] == '"') {
+                String buffer = Character.toString(code[index]);
+                index++;
+                while(index < code.length && code[index] != '"') {
+                    buffer += code[index];
+                    index++;
+                }
+                token.add(new Token("String", buffer));
+            }
+
+            else if(Character.isWhitespace(code[index])) {
+                index++;
+            }
+
+            else {
+                System.out.println("ERROR: Unknown token");
+                return new ArrayList<Token>();
+            }
         }
         return token;
-    }
-
-    public char Peek() {
-        if (index+1 >= code.length) {
-            return '\0';
-        }
-        return code[index+1];
-    }
-
-    public boolean Backtrack() {
-        index--;
-        if (index < 0) {
-            return false;
-        }
-        return true;
-    }
-
-    public boolean Advance() {
-        index++;
-        if (index >= code.length) {
-            return false;
-        }
-        return true;
     }
 }
