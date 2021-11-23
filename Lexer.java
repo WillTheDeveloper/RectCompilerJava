@@ -11,7 +11,20 @@ public class Lexer {
 
     public ArrayList<Token> Analyse() {
         ArrayList<Token> token = new ArrayList<Token>();
+        int length = code.length();
 
+        while (index < code) {
+
+            if(isDigit(code[index]) {
+                String buffer = new String(code[index]);
+                index++;
+                while(index < length && isDigit(code[index])) {
+                    buffer += code[index];
+                    index++;
+                }
+                token.add(new Token("Integer", buffer));
+            }
+        }
     }
 
     public String Peek() {
