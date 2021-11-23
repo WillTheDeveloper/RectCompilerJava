@@ -4,7 +4,7 @@ public class Lexer {
     String code;
     int index;
 
-    public Main(String text) {
+    public Lexer(String text) {
         code = text;
         index = 0;
     }
