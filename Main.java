@@ -46,4 +46,24 @@ public class Main {
                 + "<file> can be any ReCT file\n";
         System.out.println(s);
     }
+
+    public static void flagParse(String[] args) {
+        // rcj <file> [options]
+        // We need to detect the file then scan for the options
+
+        // First we check a file or options has been entered and not just "rcj"
+        if (args.length <= 1) {
+            help();
+            return;
+        }
+
+        // Checking if file exists
+        if (!(new File(args[1])).exists()) {
+            System.out.println("File '"+args[1]+"' does not exist!");
+            return;
+        }
+
+        // Parse flags and run code
+
+    }
 }
