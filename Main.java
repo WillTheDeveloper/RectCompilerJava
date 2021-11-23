@@ -17,14 +17,14 @@ public class Main {
         }
     }
 
-    public void openAndRun(String filename) {
+    public static void openAndRun(String filename) {
         File obj = new File(filename);
         if (obj.exists()) {
             // Read code and Analyse()
         }
     }
 
-    public void help() {
+    public static void help() {
         String s = "=+= Rect Compiler Java =+=\n"
                 + "Usage: rcj <file> [flag]\n"
                 + "\n"
