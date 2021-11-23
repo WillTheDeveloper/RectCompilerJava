@@ -22,7 +22,7 @@ public class Lexer {
                     buffer += code[index];
                     index++;
                 }
-                token.add(new Token("Integer", buffer));
+                token.add(new Token("INTEGER", buffer));
             }
 
             else if(Character.isAlphabetic(code[index])) {
@@ -32,7 +32,7 @@ public class Lexer {
                     buffer += code[index];
                     index++;
                 }
-                token.add(new Token("Identifier", buffer));
+                token.add(new Token("IDENTIFIER", buffer));
             }
 
             else if(code[index] == '"') {
@@ -42,10 +42,50 @@ public class Lexer {
                     buffer += code[index];
                     index++;
                 }
-                token.add(new Token("String", buffer));
+                token.add(new Token("STRING", buffer));
             }
 
             else if(Character.isWhitespace(code[index])) {
+                index++;
+            }
+
+            else if (code[index] == '+') {
+                token.add(new Token("PLUS", ""));
+                index++;
+            }
+
+            else if (code[index] == '-') {
+                token.add(new Token("MINUS", ""));
+                index++;
+            }
+
+            else if (code[index] == '*') {
+                token.add(new Token("MULTIPLY", ""));
+                index++;
+            }
+
+            else if (code[index] == '/') {
+                token.add(new Token("DIVIDE", ""));
+                index++;
+            }
+
+            else if (code[index] == '=') {
+                token.add(new Token("COMPARE", ""));
+                index++;
+            }
+
+            else if (code[index] == '<') {
+                if (code[index+1] == '-') {
+                    index++;
+                    token.add(new Token("ASSIGN", ""));
+                } else {
+                    token.add(new Token("SMALL THAN", ""));
+                }
+                index++;
+            }
+
+            else if (code[index] == '>') {
+                token.add(new Token("GREATER THAN", ""));
                 index++;
             }
 
