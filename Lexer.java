@@ -89,6 +89,31 @@ public class Lexer {
                 index++;
             }
 
+            else if (code[index] == ';') {
+                token.add(new Token("SEMICOLON", ""));
+                index++;
+            }
+
+            else if (code[index] == '(') {
+                token.add(new Token("LEFT BRACKET", ""));
+                index++;
+            }
+
+            else if (code[index] == ')') {
+                token.add(new Token("RIGHT BRACKET", ""));
+                index++;
+            }
+
+            else if (code[index] == '{') {
+                token.add(new Token("LEFT BRACE", ""));
+                index++;
+            }
+
+            else if (code[index] == '}') {
+                token.add(new Token("RIGHT BRACE", ""));
+                index++;
+            }
+
             else {
                 System.out.println("ERROR: Unknown token");
                 return new ArrayList<Token>();
