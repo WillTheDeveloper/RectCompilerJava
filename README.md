@@ -1,7 +1,5 @@
 # Rect Compiler Java
 
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/WillTheDeveloper/RectCompilerJava) ![GitHub issues](https://img.shields.io/github/issues-raw/WillTheDeveloper/RectCompilerJava) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/WillTheDeveloper/RectCompilerJava) ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/WillTheDeveloper/RectCompilerJava) ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/WillTheDeveloper/RectCompilerJava)
-
 This project aims to eventually produce a ReCT compiler written in Java. 
 The project will begin with smaller steps; starting out with a reduced and simplified specification. The project will begin as an interpreter instead of a compiler as well. The end goal of this project is to produce a rival to the original ReCT compiler, rctc, written in C#.
 
