@@ -32,7 +32,18 @@ public class Lexer {
                     buffer += code[index];
                     index++;
                 }
-                token.add(new Token("IDENTIFIER", buffer));
+                boolean x = false;
+                STRING keywords = ['DIE', 'PRINT'];
+                for(int i = 0; i < keywords.length; i++) {
+                    if(buffer == keywords[i]){
+                        token.add(new Token(keywords[i], buffer));
+                        x = true;
+                        break;
+                    }
+                }
+                if (! x) {
+                    token.add(new Token("IDENTIFIER", buffer));
+                }
             }
 
             else if(code[index] == '"') {
